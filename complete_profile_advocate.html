@@ -225,6 +225,7 @@
                               class="account-file-input"
                               hidden
                               accept="image/png, image/jpeg"
+                              required
                             />
                           </label>
                           <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
@@ -248,7 +249,9 @@
                               id="advocate_name"
                               name="advocate_name"
                               value=""
+                              placeholder="Enter Name"
                               autofocus
+                              required
                             />
                           </div>
                           <div class="mb-3 col-md-6">
@@ -263,7 +266,8 @@
                               id="advocate_mob"
                               name="advocate_mob"
                               value=""
-                              placeholder=""
+                              placeholder="Mobile Number"
+                              required
                             />
                           </div>
                           <div class="mb-3 col-md-6">
@@ -274,7 +278,8 @@
                                 id="advocate_bar_number"
                                 name="advocate_bar_number"
                                 class="form-control"
-                                placeholder=""
+                                placeholder="Bar Number"
+                                required
                               />
                             </div>
                           </div>
@@ -286,15 +291,16 @@
                                 name="advocate_date_of_birth"
                                 class="form-control"
                                 placeholder=""
+                                required
                               />
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="address" class="form-label">Driver's License or Passport</label>
-                            <input type="file" class="form-control" id="advocate_drivers_license_or_passport" name="advocate_drivers_license_or_passport" placeholder="" />
+                            <input type="file" class="form-control" id="advocate_drivers_license_or_passport" name="advocate_drivers_license_or_passport" placeholder="" required/>
                           </div>
                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="country">E-Signature</label>
-                            <input type="file" class="form-control" id="advocate_esignature" name="advocate_esignature" placeholder="" />
+                            <input type="file" class="form-control" id="advocate_esignature" name="advocate_esignature" placeholder="" required/>
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="zipCode" class="form-label">Lat</label>
@@ -309,7 +315,7 @@
                           </div>
                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="country">Language</label>
-                            <select id="advocate_lang" name="advocate_lang" class="select2 form-select">
+                            <select id="advocate_lang" name="advocate_lang" class="select2 form-select" required>
                               <option value="">Select</option>
                               <option value="English">English</option>
                               <option value="Hindi">Hindi</option>
@@ -318,23 +324,23 @@
                           </div>
                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="country">Adhar Proof</label>
-                            <input type="file" class="form-control" id="advocate_adhar_proof" name="advocate_adhar_proof" placeholder="" />
+                            <input type="file" class="form-control" id="advocate_adhar_proof" name="advocate_adhar_proof" placeholder="" required/>
                           </div>
                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="country">Certificate to Admission</label>
-                            <input type="file" class="form-control" id="certification_of_admission_to_advocate" name="certification_of_admission_to_advocate" placeholder="" />
+                            <input type="file" class="form-control" id="certification_of_admission_to_advocate" name="certification_of_admission_to_advocate" placeholder="" required/>
                           </div>
                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="country">Court Appointed Order</label>
-                            <input type="file" class="form-control" id="court_appointed_order" name="court_appointed_order" placeholder="" />
+                            <input type="file" class="form-control" id="court_appointed_order" name="court_appointed_order" placeholder="" required/>
                           </div>
                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="country">Affirmation </label>
-                            <input type="file" class="form-control" id="advocate_affirmation" name="advocate_affirmation" placeholder="" />
+                            <input type="file" class="form-control" id="advocate_affirmation" name="advocate_affirmation" placeholder="" required/>
                           </div>
                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="country">Practice Location</label>
-                            <input type="text" class="form-control" id="advocate_practice_location" name="advocate_practice_location" placeholder="" />
+                            <input type="text" class="form-control" id="advocate_practice_location" name="advocate_practice_location" placeholder="" required/>
                           </div>
                         </div>
                         <div class="mt-2">
