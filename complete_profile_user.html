@@ -228,65 +228,39 @@
                       <form id="formAccountSettings" method="POST" onsubmit="return false">
                         <div class="row">
                           <div class="mb-3 col-md-6">
-                            <label for="firstName" class="form-label">First Name</label>
+                            <label for="firstName" class="form-label">Name</label>
                             <input
                               class="form-control"
                               type="text"
-                              id="firstName"
-                              name="firstName"
+                              id="litigant_name"
+                              name="litigant_name"
                               value="John"
                               autofocus
                             />
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label for="lastName" class="form-label">Last Name</label>
-                            <input class="form-control" type="text" name="lastName" id="lastName" value="Doe" />
+                            <label for="lastName" class="form-label">Email</label>
+                            <input class="form-control" type="text" name="litigant_email" id="litigant_email" value="Doe" />
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="email"
-                              name="email"
-                              value="john.doe@example.com"
-                              placeholder="john.doe@example.com"
-                            />
+                            <label for="email" class="form-label">State</label>
+                            <select class="form-control" id="litigant_state" name="litigant_state">
+                              <option>Maharashtra</option>
+                               <option>Delhi</option>
+                            </select>
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label class="form-label" for="phoneNumber">Phone Number</label>
+                            <label class="form-label" for="phoneNumber">District</label>
                             <div class="input-group input-group-merge">
-                              <span class="input-group-text">+91</span>
-                              <input
-                                type="text"
-                                id="phoneNumber"
-                                name="phoneNumber"
-                                class="form-control"
-                                placeholder="202 555 0111"
-                              />
+                              <select class="form-control" id="litigant_district" name="litigant_district">
+                                <option>Jalgaon</option>
+                                 <option>Dhule</option>
+                              </select>
                             </div>
                           </div>
                           <div class="mb-3 col-md-6">
-                           <label for="address" class="form-label">State</label>
-                           <select class="form-control">
-                             <option>Maharashtra</option>
-                              <option>Delhi</option>
-                           </select>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                           <label for="address" class="form-label">District</label>
-                           <select class="form-control">
-                             <option>Jalgaon</option>
-                              <option>Dhule</option>
-                           </select>
-                          </div>
-                          
-                        
-                          <div class="mb-3 col-md-6">
-                            <div class="col-md">
                            <label for="address" class="form-label">Gender</label>
-                         
-                          <div class="form-check">
+                           <div class="form-check">
                             <input name="default-radio-1" class="form-check-input" type="radio" value="" id="defaultRadio2" checked="">
                             <label class="form-check-label" for="defaultRadio2"> Male </label>
                           </div>
@@ -295,21 +269,73 @@
                             <input name="default-radio-1" class="form-check-input" type="radio" value="" id="defaultRadio2" checked="">
                             <label class="form-check-label" for="defaultRadio2"> Feale </label>
                           </div>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                           <label for="address" class="form-label">Date of Birth</label>
+                           <input
+                              class="form-control"
+                              type="date"
+                              id="litigant_dob"
+                              name="litigant_dob"
+                              value=""
+                              autofocus
+                            />
+                          </div>
+                          
+                        
+                          <div class="mb-3 col-md-6">
+                            <div class="col-md">
+                           <label for="address" class="form-label">Mobile</label>
+                         
+                           <input
+                           class="form-control"
+                           type="text"
+                           id="litigant_mob"
+                           name="litigant_mob"
+                           value=""
+                           autofocus
+                         />
+
                         </div>
                           </div>
                           <div class="mb-3 col-md-6">
-                             <label class="form-label" for="country">Age</label>
-                            <input
-                            type="text"
-                            id="phoneNumber"
-                            name="phoneNumber"
-                            class="form-control"
-                            placeholder="20"
-                          />
+                             <label class="form-label" for="country">Language</label>
+                             <select id="advocate_lang" name="advocate_lang" class="select2 form-select">
+                              <option value="">Select</option>
+                              <option value="English">English</option>
+                              <option value="Hindi">Hindi</option>
+                              
+                            </select>
                           </div>
+
                           <div class="mb-3 col-md-6">
-                            
+                            <label for="address" class="form-label">Driver's License or Passport</label>
+                            <input type="file" class="form-control" id="user_drivers_license_or_passport" name="user_drivers_license_or_passport" placeholder="" />
                           </div>
+
+                        
+                          <div class="mb-3 col-md-6">
+                            <label class="form-label" for="country">Adhar Proof</label>
+                            <input type="file" class="form-control" id="user_adhar_proof" name="user_adhar_proof" placeholder="" />
+                        
+                          </div>
+
+                          <div class="mb-3 col-md-6">
+                            <label class="form-label" for="country">E-Signature</label>
+                            <input type="file" class="form-control" id="user_esignature" name="user_esignature" placeholder="" />
+                          </div>
+
+                          <div class="mb-3 col-md-6">
+                            <label class="form-label" for="country">Pincode</label>
+                            <input type="text" class="form-control" id="user_pincode" name="user_pincode" placeholder="" />
+                          </div>
+
+                          <div class="mt-2">
+                            <button type="submit" onclick="getLocation()" class="btn btn-outline-primary me-2">Get My Location</button>
+                          </div>
+                          <hr style="margin: 20px 0;">
+
+
                         </div>
                         <div class="mt-2">
                           <button type="submit" class="btn btn-primary me-2">Save changes</button>
@@ -321,7 +347,38 @@
                   </div>
             </div>
             <!-- / Content -->
+<script>
+            function getLocation() {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(showPosition, showError);
+                } else { 
+                  alert("Geolocation is not supported by this browser.");
+                }
+              }
 
+              function showPosition(position) {
+                let latitude = position.coords.latitude; 
+                let longitude = position.coords.longitude;
+                console.log(latitude, longitude);
+              }
+
+              function showError(error) {
+                switch(error.code) {
+                  case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.")
+                    break;
+                  case error.POSITION_UNAVAILABLE:
+                   alert("Location information is unavailable.")
+                    break;
+                  case error.TIMEOUT:
+                    alert("The request to get user location timed out.")
+                    break;
+                  case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.")
+                    break;
+                }
+              }
+           </script>
 
             <div class="content-backdrop fade"></div>
           </div>

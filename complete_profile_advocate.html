@@ -302,20 +302,14 @@
                             <label class="form-label" for="country">E-Signature</label>
                             <input type="file" class="form-control" id="advocate_esignature" name="advocate_esignature" placeholder="" required/>
                           </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="zipCode" class="form-label">Lat</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="advocate_lat"
-                              name="advocate_lat"
-                              placeholder=""
-                              maxlength="6"
-                            />
-                          </div>
+                         
                           <div class="mb-3 col-md-6">
                             <label class="form-label" for="country">Language</label>
+<<<<<<< HEAD
                             <select id="advocate_lang" name="advocate_lang" class="select2 form-select" required>
+=======
+                            <select id="advocate_language" name="advocate_language" class="select2 form-select">
+>>>>>>> master
                               <option value="">Select</option>
                               <option value="English">English</option>
                               <option value="Hindi">Hindi</option>
@@ -342,18 +336,80 @@
                             <label class="form-label" for="country">Practice Location</label>
                             <input type="text" class="form-control" id="advocate_practice_location" name="advocate_practice_location" placeholder="" required/>
                           </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="latitude" class="form-label">Latitude</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="advocate_lat"
+                              name="advocate_lat"
+                              placeholder=""
+                              readonly  
+                            />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="langitude" class="form-label">Langitude</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="advocate_lang"
+                              name="advocate_lang"
+                              placeholder=""
+                              readonly
+                             
+                            />
+                          </div>
+                          <div class="mt-2">
+                            <button type="submit" onclick="getLocation()" class="btn btn-outline-primary me-2">Get My Location</button>
+                          </div>
+                          <hr style="margin: 20px 0;">
                         </div>
                         <div class="mt-2">
                           <button type="submit" class="btn btn-primary me-2">Save changes</button>
                           <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                         </div>
+                        
                       </form>
                     </div>
                     <!-- /Account -->
                   </div>
             </div>
             <!-- / Content -->
+           <script>
+            const lat=document.getElementById("advocate_lat");
+            const lang=document.getElementById("advocate_lang");
+            function getLocation() {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(showPosition, showError);
+                } else { 
+                  alert("Geolocation is not supported by this browser.");
+                }
+              }
 
+              function showPosition(position) {
+                lat.value = position.coords.latitude; 
+                lang.value = position.coords.longitude;
+                console.log(lang);
+                
+              }
+
+              function showError(error) {
+                switch(error.code) {
+                  case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.")
+                    break;
+                  case error.POSITION_UNAVAILABLE:
+                   alert("Location information is unavailable.")
+                    break;
+                  case error.TIMEOUT:
+                    alert("The request to get user location timed out.")
+                    break;
+                  case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.")
+                    break;
+                }
+              }
+           </script>
 
             <div class="content-backdrop fade"></div>
           </div>
