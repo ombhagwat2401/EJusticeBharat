@@ -336,18 +336,54 @@
                             <label class="form-label" for="country">Practice Location</label>
                             <input type="text" class="form-control" id="advocate_practice_location" name="advocate_practice_location" placeholder="" />
                           </div>
+                          <div class="mt-2">
+                            <button type="submit" onclick="getLocation()" class="btn btn-outline-primary me-2">Get My Location</button>
+                          </div>
+                          <hr style="margin: 20px 0;">
                         </div>
                         <div class="mt-2">
                           <button type="submit" class="btn btn-primary me-2">Save changes</button>
                           <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                         </div>
+                        
                       </form>
                     </div>
                     <!-- /Account -->
                   </div>
             </div>
             <!-- / Content -->
+           <script>
+            function getLocation() {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(showPosition, showError);
+                } else { 
+                  alert("Geolocation is not supported by this browser.");
+                }
+              }
 
+              function showPosition(position) {
+                let latitude = position.coords.latitude; 
+                let longitude = position.coords.longitude;
+                console.log(latitude, longitude);
+              }
+
+              function showError(error) {
+                switch(error.code) {
+                  case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.")
+                    break;
+                  case error.POSITION_UNAVAILABLE:
+                   alert("Location information is unavailable.")
+                    break;
+                  case error.TIMEOUT:
+                    alert("The request to get user location timed out.")
+                    break;
+                  case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.")
+                    break;
+                }
+              }
+           </script>
 
             <div class="content-backdrop fade"></div>
           </div>
